@@ -1,12 +1,12 @@
 #include <CurieBLE.h>
 
 // BLE Accelerometer Service
-BLEService accelerometer_service("10000000-0000-0000-0000-000000000000");
+BLEService accelerometer_service("ECE16-37");
 
 // BLE Accelerometer Service Characteristics
-BLEIntCharacteristic accelerometer_characteristic_x("10000000-0000-0000-0000-000000000001", BLERead | BLEWrite);
-BLEIntCharacteristic accelerometer_characteristic_y("10000000-0000-0000-0000-000000000002", BLERead | BLEWrite);
-BLEIntCharacteristic accelerometer_characteristic_z("10000000-0000-0000-0000-000000000003", BLERead | BLEWrite);
+BLEIntCharacteristic accelerometer_characteristic_x("ECE16-37-01", BLERead | BLEWrite);
+BLEIntCharacteristic accelerometer_characteristic_y("ECE16-37-02", BLERead | BLEWrite);
+BLEIntCharacteristic accelerometer_characteristic_z("ECE16-37-03", BLERead | BLEWrite);
 
 
 void setup() {

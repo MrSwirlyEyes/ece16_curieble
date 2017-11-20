@@ -19,7 +19,7 @@ void setup() {
   Serial.println("BLE Accelerometer Central");
 
   // Scan/look-for a Peripheral
-  BLE.scanForUuid("10000000-0000-0000-0000-000000000000");
+  BLE.scanForUuid("ECE16-37");
 }
 
 void loop() {
@@ -46,7 +46,7 @@ void loop() {
     write_to_peripheral(peripheral);
 
     // If we disconnected with Peripheral, try again!
-    BLE.scanForUuid("10000000-0000-0000-0000-000000000000");
+    BLE.scanForUuid("ECE16-37");
   }
 }
 
@@ -72,9 +72,9 @@ void write_to_peripheral(BLEDevice peripheral) {
     }
     
   // Retrieve the Accelerometer Characteristic(s) from Peripheral
-  BLECharacteristic accelerometer_characteristic_x=peripheral.characteristic("10000000-0000-0000-0000-000000000001");
-  BLECharacteristic accelerometer_characteristic_y=peripheral.characteristic("10000000-0000-0000-0000-000000000002");
-  BLECharacteristic accelerometer_characteristic_z=peripheral.characteristic("10000000-0000-0000-0000-000000000003");
+  BLECharacteristic accelerometer_characteristic_x=peripheral.characteristic("ECE16-37-01");
+  BLECharacteristic accelerometer_characteristic_y=peripheral.characteristic("ECE16-37-02");
+  BLECharacteristic accelerometer_characteristic_z=peripheral.characteristic("ECE16-37-03");
 
   // While we are still connected to the Peripheral, update its IMU Characteristics
   while(peripheral.connected()) {
